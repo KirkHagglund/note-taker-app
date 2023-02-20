@@ -1,5 +1,17 @@
 [    {
-        "title":"Test Title",
-        "text":"Test text"
+        "title":"Study Session",
+        "text":"Read documentation for MySQL",
+        "id":""
+    },
+    {
+        "title":"Homework",
+        "text":"Finish working through Express Algorithms",
+        "id":""
+    },
+    {
+        "title":"Assignment",
+        "text":"Build and populate mysql databases for module 12 challenge",
+        "id":""
+        
     }
 ]
