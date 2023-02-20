@@ -19,11 +19,6 @@ app.get('/notes/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'));
 });
 
-// Wildcard catch all for nonexistent endpints
-app.get('/*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/public/404.html'))
-});
-
 app.get('/api/notes', (req, res) => {
     // Should read db.json file and return all saved notes as json
     fs.readFile('./db/db.json', 'utf8', (error, data) => {
@@ -36,11 +31,22 @@ app.get('/api/notes', (req, res) => {
     });
 });
 
-app.post('/api/notes', (req, res) => {
+/*app.post('/api/notes', (req, res) => {
     // Should receive new notes and add them to the db.json file. Use uuid to create a unique id for new entries
-
+    
+    fs.appendFile('./db/db.json', 'utf8', (error, data) => {
+        if(error) {
+            console.log(error);
+            return;
+        }
+        const note = {
+            title: req.body.title,
+            text: req.body.text
+        };
+        note.push(data);
+    })
 });
-
+*/
 // Create listener function
 
 app.listen(port, () => console.log(`Listening on port ${port}...`));
