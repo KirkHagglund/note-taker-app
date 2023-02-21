@@ -4,6 +4,8 @@ const fs = require('fs');
 const express = require('express');
 const app = express();
 const port = process.env.port || 3001;
+//const uuid = require('uuid');
+const { v4: uuidv4 } = require('uuid');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -40,19 +42,21 @@ app.post('/api/notes', (req, res) => {
         }
         const notes = JSON.parse(data);
         const newPost = {
+            id: uuidv4(),
             title: req.body.title,
             text: req.body.text
         };
         notes.push(newPost);
         console.log(notes);
         res.json(notes);
-    })
-    /*.then(
-        fs.writeFile('./db/db.json', (notes) => {
-            const newNotes = JSON.stringify.notes;
+        const newNotes = JSON.stringify(notes); 
+        fs.writeFile('./db/db.json', newNotes, (error) => {
+            if (error) {
+                console.log(error)
+            }
             console.log('Success');
-        })
-    );*/
+        });
+    });
 });
 
 // Create listener function
