@@ -48,10 +48,11 @@ app.post('/api/notes', (req, res) => {
         res.json(notes);
     })
     /*.then(
-        fs.writeFile('./db/db.json', (data) => {
-            res.json(data);
+        fs.writeFile('./db/db.json', (notes) => {
+            const newNotes = JSON.stringify.notes;
+            console.log('Success');
         })
-    )*/
+    );*/
 });
 
 // Create listener function
