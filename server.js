@@ -33,22 +33,25 @@ app.get('/api/notes', (req, res) => {
 
 app.post('/api/notes', (req, res) => {
     // Should receive new notes and add them to the db.json file. Use uuid to create a unique id for new entries
-    const note = {
-        title: req.body.title,
-        text: req.body.text
-    };
-  
-    fs.appendFile('./db/db.json', 'utf8', (error, data) => {
+    fs.readFile('./db/db.json', 'utf8', (error, data) => {
         if(error) {
             console.log(error);
             return;
         }
-        const note = {
+        const notes = JSON.parse(data);
+        const newPost = {
             title: req.body.title,
             text: req.body.text
         };
-        res.json.push(note);
+        notes.push(newPost);
+        console.log(notes);
+        res.json(notes);
     })
+    /*.then(
+        fs.writeFile('./db/db.json', (data) => {
+            res.json(data);
+        })
+    )*/
 });
 
 // Create listener function

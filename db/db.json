@@ -1,13 +1,13 @@
 [    {
-        "title":"Study Session",
-        "text":"Read documentation for MySQL"
-    },
-    {
-        "title":"Homework",
-        "text":"Finish working through Express Algorithms"
-    },
-    {
-        "title":"Assignment",
-        "text":"Build and populate mysql databases for module 12 challenge"        
-    }
+    "title":"Study Session",
+    "text":"Read documentation for MySQL"
+},
+{
+    "title":"Homework",
+    "text":"Finish working through Express Algorithms"
+},
+{
+    "title":"Assignment",
+    "text":"Build and populate mysql databases for module 12 challenge"        
+}
 ]
