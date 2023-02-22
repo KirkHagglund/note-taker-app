@@ -28,6 +28,12 @@
   ## Usage
   To use the application, navigate to the home screen. Click 'Get Started' to view existing notes and create new ones. Once a title and text have been added, a save button appears at the top right of the window, click to save and add it to the list on the left.
 
+  Heroku URL: https://shielded-anchorage-72962.herokuapp.com/
+
+  Github URL: https://shielded-anchorage-72962.herokuapp.com/
+
+   ![A screenshot of a generated README file](./utils/screenshot.png)
+
   ## License
   This project is protected by a standard MIT License. Please see license link for detailed information.
   
