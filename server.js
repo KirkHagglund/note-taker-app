@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3001;
 
 const { v4: uuidv4 } = require('uuid');
 
@@ -13,7 +13,7 @@ app.use(express.static('public'));
 
 // Create express requests
 
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
@@ -61,4 +61,4 @@ app.post('/api/notes', (req, res) => {
 
 // Create listener function
 
-app.listen(port, () => console.log(`Listening on port ${port}...`));
+app.listen(port, () => console.log(`Listening on port ${PORT}...`));
