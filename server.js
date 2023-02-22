@@ -61,4 +61,4 @@ app.post('/api/notes', (req, res) => {
 
 // Create listener function
 
-app.listen(port, () => console.log(`Listening on port ${PORT}...`));
+app.listen(PORT, () => console.log(`Listening on port ${PORT}...`));
